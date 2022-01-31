@@ -1,3 +1,12 @@
+function mensaje(tipo, mensaje) {
+    const div = document.getElementById("mensajes");
+    if( tipo == 'error') {
+
+    } else {
+
+    }
+}
+
 function registrarAlumno(event){    
     // evito que el formulario haga un submit normal
     // para manejarlo dentro de la función
@@ -32,7 +41,8 @@ function registrarAlumno(event){
         body: JSON.stringify(alumno)
     })
         .then( response => response.json() )
-        .then( data => console.log(data) )
+        .then( data     => console.log(data) ) 
+        .catch( err     => console.error(err) )
     ;
 
     return false;
