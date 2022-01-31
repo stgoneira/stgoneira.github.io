@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Registro Alumnos - Desarrollo Frontend</title>
+	<link href="estilo.css" rel="stylesheet" />
+</head>
+<body>
+	<img 
+		alt="AIEP Logotipo"
+		src="https://www.curriculumnacional.cl/614/articles-180962_imagen_portada.thumb_i_recuadros.jpg" 
+		style="height: 100px;"
+	/>
+	<h1>Registro de Alumnos</h1>	
+
+	<form id="form-registro">
+		<div class="form-line">
+			<label for="rut">RUT (*)</label>
+			<input 
+				type="number" 
+				id="rut" 
+				name="rut" 
+				required="required"
+				min="4000000"
+				minlength="7" 
+				maxlength="8" 
+				placeholder="12345678" 
+			/>
+			- 
+			<input 
+				type="text" 
+				id="dv" 
+				name="dv"
+				placeholder="k"
+				required="required"
+				minlength="1" 
+				maxlength="1" 
+				pattern="[0-9kK]{1}"
+			/>
+			<small>Complete con su RUT sin puntos ni guión</small>
+		</div>
+		
+		<div class="form-line">
+			<label for="nombre">Nombre Completo (*)</label>
+			<input 
+				type="text" 
+				id="nombre" 
+				name="nombre"
+				required="required"
+				minlength="3" 
+				maxlength="40" 
+				placeholder="Ramón Jara" 
+			/>			
+			<small>Complete al menos con su nombre y apellido.</small>
+		</div>
+
+		<div class="form-line">
+			<label for="nombre">URL Github (*)</label>
+			<input 
+				type="url" 
+				id="github" 
+				name="github" 
+				required="required"				
+				minlength="20" 
+				maxlength="100" 
+				placeholder="https://github.com/ramonjava" 
+			/>			
+			<small>Complete la URL de su repositorio Github.</small>
+		</div>
+
+		<div class="form-line buttons">
+			<button type="submit">Enviar</button>
+		</div>
+
+	</form>
+
+	<script src="script.js"></script>
+</body>
+</html>

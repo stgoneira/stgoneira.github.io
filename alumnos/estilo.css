@@ -1,0 +1,54 @@
+body {    
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);    
+    height: 100vh;
+    padding: 2em;
+    color: white;    
+}
+
+h1 {
+    margin: 1.5em 0;
+}
+
+div.form-line {
+    margin-bottom: 1.5em;
+}
+
+div.form-line label {
+    width: 200px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+div.form-line small {    
+    display: block;
+    color: #bbb;
+    margin-top: 0.7em;
+}
+
+form input {
+    width: 210px;
+    padding: 0.3em;
+    border: 1px solid white;
+}
+form #rut {
+    width: 170px;
+}
+form #dv {
+    width: 20px;
+}
+
+div.buttons {
+    border-top: 1px solid white;
+    padding-top: 2em;
+}
+
+button {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    border-radius: 4px;
+    padding: 0.7em 2em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
