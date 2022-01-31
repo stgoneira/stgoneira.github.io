@@ -1,16 +1,19 @@
-function mensaje(tipo, mensaje) {
+function mostrarMensaje(tipo, mensaje) {
     const div = document.getElementById("mensajes");
     if( tipo == 'error') {
-
+        div.className = "error"
     } else {
-
+        div.className = "ok"
     }
+    div.innerHTML = mensaje
 }
 
 function registrarAlumno(event){    
     // evito que el formulario haga un submit normal
     // para manejarlo dentro de la función
     event.preventDefault(); 
+
+    const boton = document.getElementById("boton").disabled = true;
 
     // recupero los valores ingresador x el usuario
     const form      = event.currentTarget;
@@ -40,9 +43,16 @@ function registrarAlumno(event){
         },
         body: JSON.stringify(alumno)
     })
-        .then( response => response.json() )
+        .then( response => {
+            if( response.ok ) {
+                mostrarMensaje("ok", "Se han guardado correctamente sus datos.");
+                return response.json();
+            } else {
+                mostrarMensaje("error", "Hubo un error al guardar el registro.");
+            }
+        })
         .then( data     => console.log(data) ) 
-        .catch( err     => console.error(err) )
+        .catch( err     => mostrarMensaje("error", "Se generó una excepción al ejecutar, contacte al administrador si el problema persiste.") )
     ;
 
     return false;

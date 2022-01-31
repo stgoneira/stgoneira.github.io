@@ -10,6 +10,15 @@ h1 {
     margin: 1.5em 0;
 }
 
+div.ok {
+    background-color: green;
+}
+
+div.error {
+    background-color: red;
+    color: white;
+}
+
 div.form-line {
     margin-bottom: 1.5em;
 }
